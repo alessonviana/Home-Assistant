@@ -4,7 +4,7 @@ services:
     container_name: homeassistant
     image: "ghcr.io/home-assistant/home-assistant:2022.12"
     volumes:
-      - /Home-Assistant/config:/config
+      - /home/ubuntu/Home-Assistant:/config
       - /etc/localtime:/etc/localtime:ro
     restart: unless-stopped
     privileged: true
