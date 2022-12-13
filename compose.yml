@@ -1,13 +1,11 @@
-version: '3'
+version: '3.7'
 services:
   homeassistant:
     container_name: homeassistant
-    image: "ghcr.io/home-assistant/home-assistant:stable"
+    image: "ghcr.io/home-assistant/home-assistant:2022.12"
     volumes:
       - /Users/alesson/Documents/Projetos/Home-Assistant/config:/config
       - /etc/localtime:/etc/localtime:ro
-    ports:
-      - "8123:8123"
     restart: unless-stopped
     privileged: true
     network_mode: host
