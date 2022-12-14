@@ -2,7 +2,7 @@ version: '3'
 services:
   homeassistant:
     container_name: homeassistant
-    image: "homeassistant/home-assistant"
+    image: "homeassistant/home-assistant:latest"
     volumes:
       - ./Home-Assistant/config:/config
       - /etc/localtime:/etc/localtime:ro
