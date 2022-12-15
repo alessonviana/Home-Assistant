@@ -2,7 +2,7 @@ version: '3'
 services:
   homeassistant:
     container_name: homeassistant
-    image: "homeassistant/armhf-homeassistant:stable"
+    image: "ghcr.io/home-assistant/home-assistant:stable"
     volumes:
       - ./Home-Assistant/config:/config
       - /etc/localtime:/etc/localtime:ro
