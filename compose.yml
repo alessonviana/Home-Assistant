@@ -1,27 +1,41 @@
 version: '3'
 services:
   homeassistant:
-    container_name: homeassistant-test
-    hostname: homeassistant-test
-    image: homeassistant/home-assistant:stable
+    container_name: homeassistant
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+    volumes:
+      - /Home-assistant/config:/config
+      - /etc/localtime:/etc/localtime:ro
     restart: unless-stopped
     privileged: true
-    networks:
-      backend:
-        ipv4_address: 10.10.0.99
-    environment:
-      DISABLE_JEMALLOC: true
-      TZ: America/Fortaleza
-networks:
-  backend:
-    name: backend
-    driver: bridge
-    ipam:
-      driver: default
-      config:
-        - subnet: 10.10.0.0/24
-          gateway: 10.10.0.1
+    network_mode: host
 
+#####################################################
+
+#version: '3'
+#services:
+#  homeassistant:
+#    container_name: homeassistant-test
+#    hostname: homeassistant-test
+#    image: homeassistant/home-assistant:stable
+#    restart: unless-stopped
+#    privileged: true
+#    networks:
+#      backend:
+#        ipv4_address: 10.10.0.99
+#    environment:
+#      DISABLE_JEMALLOC: true
+#      TZ: America/Fortaleza
+#networks:
+#  backend:
+#    name: backend
+#    driver: bridge
+#    ipam:
+#      driver: default
+#      config:
+#        - subnet: 10.10.0.0/24
+#          gateway: 10.10.0.1
+#
 #######################################################
 #version: '3'
 #services:
