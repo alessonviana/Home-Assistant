@@ -22,7 +22,7 @@ networks:
         - subnet: 10.10.0.0/24
           gateway: 10.10.0.1
 
-====================================================
+#######################################################
 #version: '3'
 #services:
 #  homeassistant:
@@ -36,7 +36,7 @@ networks:
 #    restart: unless-stopped
 #    privileged: true
 #    network_mode: host
-====================================================
+##########################################################
 #version: '3'
 #services:
 #  homeassistant:
