@@ -1,14 +1,28 @@
-version: '3'
+version: '3.5'
 services:
   homeassistant:
     container_name: homeassistant
-    image: "ghcr.io/home-assistant/home-assistant:stable"
+    restart: unless-stopped
+    image: ghcr.io/home-assistant/home-assistant:stable
+    network_mode: host
+    privileged: true
+    environment:
+      - TZ=Europe/Berlin
     volumes:
       - ./config:/config
-      - /etc/localtime:/etc/localtime:ro
-    restart: unless-stopped
-    privileged: true
-    network_mode: host
+
+#########################################################
+#version: '3'
+#services:
+#  homeassistant:
+#    container_name: homeassistant
+#    image: "ghcr.io/home-assistant/home-assistant:stable"
+#    volumes:
+#      - ./config:/config
+#      - /etc/localtime:/etc/localtime:ro
+#    restart: unless-stopped
+#    privileged: true
+#    network_mode: host
 
 #####################################################
 
