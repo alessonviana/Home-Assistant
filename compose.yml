@@ -3,7 +3,7 @@ services:
   homeassistant:
     container_name: homeassistant
     restart: unless-stopped
-    image: homeassistant/aarch64-hassio-dns #ghcr.io/home-assistant/home-assistant:2022.11.5
+    image: homeassistant/aarch64-addon-ssh #ghcr.io/home-assistant/home-assistant:2022.11.5
     network_mode: host
     privileged: true
     environment:
