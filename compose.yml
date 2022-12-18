@@ -3,7 +3,7 @@ services:
   homeassistant:
     container_name: homeassistant
     restart: unless-stopped
-    image: ghcr.io/home-assistant/home-assistant:stable
+    image: ghcr.io/home-assistant/home-assistant:2022.6
     network_mode: host
     privileged: true
     environment:
