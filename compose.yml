@@ -2,12 +2,10 @@ version: '3'
 services:
   homeassistant:
     container_name: homeassistant
-    image: "ghcr.io/home-assistant/home-assistant:stable"
+    image: "homeassistant/amd64-base"
     volumes:
       - ./config:/config
       - /etc/localtime:/etc/localtime:ro
-    ports:
-      - "8123:8123"
     restart: unless-stopped
     privileged: true
     network_mode: host
