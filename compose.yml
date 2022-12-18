@@ -3,7 +3,7 @@ services:
   homeassistant:
     container_name: homeassistant
     restart: unless-stopped
-    image: homeassistant/amd64-base-python #homeassistant/aarch64-base:3.15 
+    image: homeassistant/aarch64-wheels #homeassistant/aarch64-base:3.15 
     network_mode: host
     privileged: true
     environment:
