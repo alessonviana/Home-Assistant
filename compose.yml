@@ -10,6 +10,8 @@ services:
       - TZ=Europe/Berlin
     volumes:
       - ./config:/config
+    ports:
+      - "8123:8123"
 
 #########################################################
 #version: '3'
