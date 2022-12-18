@@ -1,17 +1,14 @@
-version: '3.5'
+version: '3'
 services:
   homeassistant:
     container_name: homeassistant
-    restart: unless-stopped
-    image: homeassistant/aarch64-base-ubuntu #homeassistant/aarch64-base:3.15 
-    network_mode: host
-    privileged: true
-    environment:
-      - TZ=Europe/Berlin
+    image: "ghcr.io/home-assistant/home-assistant:stable"
     volumes:
       - ./config:/config
-    ports:
-      - "8123:8123"
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
 
 #########################################################
 #version: '3'
